@@ -1,0 +1,11 @@
+---
+title: "Class 09_17_19"
+author: "Johnny Kauffman"
+date: "9/17/2019"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
