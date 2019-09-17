@@ -9,3 +9,30 @@ output: html_document
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
+```{r}
+library(fivethirtyeight)
+library(tidyverse)
+
+```
+
+```{r}
+
+data("congress_age")
+
+  old <- congress_age %>%
+  mutate(year = format(termstart, "%Y")) %>%
+  filter(party %in% c("R", "D")) %>%
+  group_by(year, party) %>%
+  summarize(avg = mean(age)) 
+  
+  ggplot(old, aes(x = year, y = avg, group = party, color = party, )) + 
+    geom_line() +
+    labs(title = "oldz") + 
+    expand_limits(y = 40)
+    
+
+
+  
+  
+```
+
