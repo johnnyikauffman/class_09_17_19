@@ -12,6 +12,10 @@ knitr::opts_chunk$set(echo = TRUE)
 ```{r}
 library(fivethirtyeight)
 library(tidyverse)
+install.packages("ggthemes")
+library(ggthemes)
+
+
 
 ```
 
@@ -28,7 +32,9 @@ data("congress_age")
   ggplot(old, aes(x = year, y = avg, group = party, color = party, )) + 
     geom_line() +
     labs(title = "oldz") + 
-    expand_limits(y = 40)
+    expand_limits(y = 40) +
+    theme_fivethirtyeight() +
+    
     
 
 
